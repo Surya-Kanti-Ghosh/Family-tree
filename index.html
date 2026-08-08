@@ -6,7 +6,7 @@
     <title>My Private Family Tree</title>
     <link rel="stylesheet" href="style.css">
     <!-- Importing the library directly via CDN (No installation required) -->
-    <script src="https://balkangraph.com/js/FamilyTree.js"></script>
+    <script src="https://cdn.balkan.app/familytree2.js"></script>
 </head>
 <body>
     <div id="header">
@@ -17,6 +17,30 @@
     <!-- This div is where the library will draw the tree -->
     <div id="tree"></div>
 
-    <script src="app.js"></script>
+    <script>
+  let familyTree = new FamilyTree2(document.getElementById('tree'));
+
+  familyTree.addFamilyMembers([
+    { id: 1, fatherId: 2, motherId: 3, spouseIds: [4, 5], name: 'Me' },
+    { id: 2, fatherId: 19, motherId: 18, name: 'Father' },
+    { id: 3, fatherId: 17, motherId: 16, name: 'Mother' },
+    { id: 4, name: 'Spouse 1' },
+    { id: 5, fatherId: 12, motherId: 13, name: 'Spouse 2' },
+    { id: 6, fatherId: 2, motherId: 3, name: 'Sibling 1' },
+    { id: 7, fatherId: 2, motherId: 3, name: 'Sibling 2' },
+    { id: 8, fatherId: 1, motherId: 4, name: 'Child 1' },
+    { id: 9, fatherId: 1, motherId: 4, name: 'Child 2' },
+    { id: 10, fatherId: 1, motherId: 4, name: 'Child 3' },
+    { id: 11, fatherId: 1, motherId: 4, name: 'Child 4' },
+    { id: 12, name: 'Father in Law' },
+    { id: 13, name: 'Mother in Law' },
+    { id: 14, fatherId: 17, motherId: 16, name: 'Uncle 1' },
+    { id: 15, fatherId: 17, motherId: 16, name: 'Uncle 2' },
+    { id: 16, name: 'Grandmother 1' },
+    { id: 17, name: 'Grandfather 1' },
+    { id: 18, name: 'Grandmother 2' },
+    { id: 19, name: 'Grandfather 2' }
+  ]).draw(1);
+</script>
 </body>
 </html>
